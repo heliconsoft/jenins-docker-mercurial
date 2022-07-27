@@ -1,8 +1,8 @@
 # a naive Jenkins image
-FROM jenkins
+FROM jenkins/jenkins:lts-jdk11
 USER root
 RUN apt-get update && \
-    apt-get install -y mercurial meld && \
+    apt-get install -y mercurial && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 USER jenkins
